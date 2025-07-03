@@ -3,7 +3,7 @@ const MainCard = ({ src, alt, handleHeartClick, choiceFavorite }) => {
 
   return (
     <div className="main-card">
-      <img src={src} alt={alt} width="400px" />
+      <img src={src} alt={alt} className="main-image" />
       <button onClick={handleHeartClick}>{heartIcon}</button>
     </div>
   );

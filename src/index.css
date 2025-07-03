@@ -26,6 +26,12 @@ form {
   top: -13px;
 }
 
+.main-card .main-image {
+  width: 400px;
+  height: 400px;
+  object-fit: contain;
+}
+
 .favorites {
   display: flex;
   justify-content: center;
@@ -39,4 +45,6 @@ form {
 
 .favorites img {
   width: 150px;
+  height: 150px;
+  object-fit: contain;
 }

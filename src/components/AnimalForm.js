@@ -26,7 +26,7 @@ const AnimalForm = ({ updateMainAnimal }) => {
     }
 
     setErrorMessage('');
-    updateMainAnimal();
+    updateMainAnimal(value);
   }
 
   return (
