@@ -1,18 +1,9 @@
-import './App.css';
 import React from 'react';
-import PageTitle from './components/PageTitle';
-import AnimalForm from './components/AnimalForm';
-import MainCard from './components/MainCard';
-import Favorites from './components/Favorites';
-
-const jsonLocalStorage = {
-  setItem: (key, value) => {
-    localStorage.setItem(key, JSON.stringify(value));
-  },
-  getItem: (key) => {
-    return JSON.parse(localStorage.getItem(key));
-  },
-};
+import PageTitle from './components/PageTitle/PageTitle';
+import AnimalForm from './components/AnimalForm/AnimalForm';
+import MainCard from './components/MainCard/MainCard';
+import Favorites from './components/Favorites/Favorites';
+import jsonLocalStorage from './utils/jsonLocalStorage';
 
 const OPEN_API_DOMAIN = 'https://cataas.com';
 
@@ -49,7 +40,10 @@ function App() {
   }
 
   function handleHeartClick() {
-    console.log('하트 버튼 클릭');
+    if(favorites.includes(mainAnimal)) {
+      alert('이미 추가된 귀여운 고양이 입니다.')
+      return;
+    }
     setFavorites((pre) => {
       const nextFavorites = [...pre, mainAnimal];
       localStorage.setItem('favorites', JSON.stringify(nextFavorites));
